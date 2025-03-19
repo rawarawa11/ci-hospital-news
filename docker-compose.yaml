@@ -1,0 +1,39 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: php.Dockerfile
+        container_name: article_app
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+        depends_on:
+            - db
+
+    web:
+        image: nginx:alpine
+        container_name: article_web
+        ports:
+            - "80:80"
+        volumes:
+            - ./:/var/www/html
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - app
+
+    db:
+        image: mysql:8.0
+        container_name: article_db
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: article_db
+            MYSQL_USER: ci3_user
+            MYSQL_PASSWORD: ci3_password
+        ports:
+            - "3306:3306"
+        volumes:
+            - db_data:/var/lib/mysql
+
+volumes:
+    db_data:
