@@ -1,27 +1,3 @@
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Detail Berita</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container mt-4">
-	<h1 class="mb-4">Detail Berita</h1>
-	<?php if ($post): ?>
-		<h2><?= $post->post_title ?></h2>
-		<small class="text-muted">Kategori: <?= $post->post_cat_id ?>
-			| <?= date('d M Y', strtotime($post->created_at)) ?></small>
-		<hr>
-		<p><?= $post->post_content ?></p>
-		<a href="<?= site_url('home') ?>" class="btn btn-primary">Kembali</a>
-	<?php else: ?>
-		<p class="text-muted">Berita tidak ditemukan.</p>
-		<a href="<?= site_url('home') ?>" class="btn btn-primary">Kembali</a>
-	<?php endif; ?>
-</div>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,23 +42,28 @@
             line-height: 1.6;
             color: #333;
         }
-        .back-link {
-            display: inline-block;
+        .back-button {
+            display: block;
             margin-top: 20px;
-            color: #2b6cb0;
-            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
             font-weight: bold;
+            cursor: pointer;
+            text-align: center;
         }
-        .back-link:hover {
-            text-decoration: underline;
+        .back-button:hover {
+            background-color: #1e4e8c;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Tampilkan gambar jika tersedia -->
         <?php if (!empty($post->thumbnail)) : ?>
-            <img src="<?= site_url('upload\thumbnail/' . $post->thumbnail); ?>" alt="<?= $post->post_title; ?>" class="article-img">
+            <img src="<?= site_url('upload/thumbnail/' . $post->thumbnail); ?>" alt="<?= $post->post_title; ?>" class="article-img">
         <?php else : ?>
             <img src="https://placehold.co/800x400?text=No+Image" alt="No Image Available" class="article-img">
         <?php endif; ?>
@@ -93,7 +74,7 @@
             <?= nl2br($post->post_content); ?>
         </div>
 
-        <a href="<?= site_url('home'); ?>" class="back-link">&larr; Kembali ke Berita</a>
+        <button class="back-button" onclick="window.location.href='<?= site_url('home'); ?>'">&larr; Kembali ke Berita</button>
     </div>
 </body>
 </html>
