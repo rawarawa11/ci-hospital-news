@@ -14,7 +14,7 @@
 		<div class="d-flex align-items-center">
 			<img src="<?= base_url("assets/img/newspaper_9772011.png") ?>" alt="NewsOne logo" class="me-2"
 				 style="width: 40px; height: auto;"/>
-			<h4 class="mb-0 text-dark">News<span class="fw-bold">One</span></h4>
+			<h4 class="mb-0 text-black-50">News<span class="fw-bold">One</span></h4>
 		</div>
 		<nav class="d-flex justify-content-center">
 			<a href="<?= site_url('home'); ?>" class="btn btn-primary"><i class="fas fa-arrow-left me-2"> </i>Back
@@ -26,19 +26,21 @@
 <div class="container mt-4">
 	<div class="row">
 		<div class="col-lg-8 col-md-12 mx-auto">
-			<?php if (isset($post->thumbnail)) : ?>
-				<img src="<?= base_url('upload/thumbnail/' . $post->thumbnail); ?>" alt="<?= $post->post_title; ?>"
-					 class="img-fluid rounded mb-4 align-content-center">
-			<?php else : ?>
-				<img src="https://placehold.co/800x400?text=No+Image" alt="No Image Available"
-					 class="img-fluid rounded mb-4">
-			<?php endif; ?>
+			<div class="shadow rounded p-5 bg-white mx-auto">
+				<?php if (isset($post->thumbnail)) : ?>
+					<img src="<?= base_url('upload/thumbnail/' . $post->thumbnail); ?>" alt="<?= $post->post_title; ?>"
+						 class="img-fluid rounded mb-4 d-block mx-auto">
+				<?php else : ?>
+					<img src="https://placehold.co/800x400?text=No+Image" alt="No Image Available"
+						 class="img-fluid rounded mb-4 d-block mx-auto">
+				<?php endif; ?>
 
-			<h1 class="h2"><?= $post->post_title; ?></h1>
-			<p class="text-muted"><i
-					class="fas fa-calendar-alt"></i> <?= date('d M Y', strtotime($post->created_at)); ?></p>
-			<div class="article-content">
-				<p><?= nl2br($post->post_content); ?></p>
+				<h1 class="display-4 mb-3"><?= $post->post_title; ?></h1>
+				<p class="text-muted mb-4"><i class="fas fa-calendar-alt"></i> <?= date('d M Y', strtotime($post->created_at)); ?></p>
+
+				<div class="article-content">
+					<p class="lead"><?= nl2br($post->post_content); ?></p>
+				</div>
 			</div>
 		</div>
 	</div>
