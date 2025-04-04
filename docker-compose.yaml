@@ -27,7 +27,7 @@ services:
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: article_db
+            MYSQL_DATABASE: news_ci
             MYSQL_USER: ci3_user
             MYSQL_PASSWORD: ci3_password
         ports:
