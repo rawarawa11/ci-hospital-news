@@ -49,6 +49,7 @@ class M_admin extends CI_Model
 			->from('posts p')
 			->join('categories c', 'p.post_cat_id = c.id', 'left')
 			->where('p.is_delete', 0)
+			->order_by('p.created_at', 'desc')
 			->get()
 			->result();
 	}
