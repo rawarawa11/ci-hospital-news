@@ -111,4 +111,18 @@ class M_admin extends CI_Model
 			->where('id', $id)
 			->update('categories', ['is_delete' => 1]);
 	}
+
+	public function get_berita_by_kategori($slug)
+	{
+		return $this->db
+			->select('p.*, c.cat_title, c.cat_slug')
+			->from('posts p')
+			->join('categories c', 'p.post_cat_id = c.id')
+			->where('c.cat_slug', $slug)
+			->where('p.is_delete', 0)
+			->order_by('p.created_at', 'desc')
+			->get()
+			->result();
+	}
+
 }

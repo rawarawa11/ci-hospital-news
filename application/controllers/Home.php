@@ -11,7 +11,7 @@ class Home extends CI_Controller
 
     public function index()
 	{
-    $data['title'] = "Berita Terbaru";
+    $data['title'] = "RS Bhayangkara";
     $data['articles'] = $this->M_admin->get_all_posts();
 
     if (empty($data['articles'])) {
@@ -41,4 +41,27 @@ class Home extends CI_Controller
         $data['title'] = $data['post']->post_title;
         $this->load->view('public/news_detail_view', $data);
     }
+
+    public function profil()
+    {
+        $data['title'] = 'Profil RS Bhayangkara Aceh';
+        $this->load->view('public/profil_view', $data);
+    }
+
+    public function pelayanan()
+    {
+        $data['title'] = "Pelayanan";
+        $this->load->view('public/pelayanan_view', $data);
+    }
+    
+    // public function kategori($slug)
+    // {
+    //     $data['title'] = "Kategori";
+    //     $data['kategori'] = ucwords(str_replace('-', ' ', $slug));
+    //     $data['berita'] = $this->M_admin->get_berita_by_kategori($slug);
+
+    //     $this->load->view('public/berita_kategori_view', $data);
+    // }
+
+
 }
