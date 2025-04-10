@@ -11,26 +11,28 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+
         .section-title {
             font-weight: bold;
             color: #0d6efd;
             margin-bottom: 1rem;
         }
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+        .contact-info i {
+            font-size: 24px;
+            color: #0d6efd;
         }
 
-        .card-body {
-            flex-grow: 1;
+        .contact-info h5 {
+            color: #333;
+            margin-top: 10px;
         }
 
-        .card img {
-            object-fit: cover; 
+        .map-container {
+            height: 400px;
+            width: 100%;
+            margin-top: 30px;
         }
-
     </style>
 </head>
 
@@ -48,7 +50,7 @@
                     <a class="nav-link text-dark fw-semibold" href="<?= site_url('home'); ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active fw-bold text-primary" href="<?= site_url('profil'); ?>">Profil</a>
+                    <a class="nav-link text-dark fw-semibold" href="<?= site_url('profil'); ?>">Profil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark fw-semibold" href="<?= site_url('home/pelayanan'); ?>">Pelayanan</a>
@@ -57,7 +59,7 @@
                     <a class="nav-link text-dark fw-semibold" href="<?= site_url('berita'); ?>">Berita</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-semibold" href="<?= site_url('kontak'); ?>">Kontak</a>
+                    <a class="nav-link active fw-bold text-primary" href="<?= site_url('kontak'); ?>">Kontak</a>
                 </li>
             </ul>
             <a href="<?= site_url('login'); ?>" class="btn btn-warning d-flex align-items-center px-4 py-2 rounded-3">
@@ -70,23 +72,54 @@
 <main class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title">Berita Terbaru</h2>
-            <p class="text-muted">Informasi terkini mengenai kegiatan dan perkembangan di RS Bhayangkara Aceh.</p>
+            <h2 class="section-title">Kontak Kami</h2>
+            <p class="text-muted">Kami siap membantu Anda. Silakan hubungi kami melalui form berikut atau langsung datang ke lokasi.</p>
         </div>
 
         <div class="row">
-            <?php foreach ($articles as $b): ?>
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <img src="<?= base_url('uploads/' . $b->thumbnail); ?>" class="card-img-top" alt="<?= $b->post_title; ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $b->post_title; ?></h5>
-                        <p class="card-text"><?= character_limiter(strip_tags($b->post_content), 150); ?></p>
-                        <a href="<?= site_url('home/detail/' . $b->id); ?>" class="btn btn-primary">Baca Selengkapnya</a>
+            <!-- Contact Form -->
+            <div class="col-md-6">
+                <h4 class="section-title">Formulir Kontak</h4>
+                <form action="<?= site_url('kontak/submit'); ?>" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Pesan</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-6">
+                <h4 class="section-title">Informasi Kontak</h4>
+                <div class="contact-info">
+                    <div class="mb-4">
+                        <i class="fas fa-phone-alt"></i>
+                        <h5>+62 812 345 6789</h5>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-envelope"></i>
+                        <h5>contact@rsbhayangkaraaceh.com</h5>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h5>Jl. Raya Bhayangkara No. 123, Banda Aceh</h5>
                     </div>
                 </div>
             </div>
-            <?php endforeach; ?>
+        </div>
+
+        <!-- Google Maps Embed -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98765.7890!2d95.322301!3d5.5792755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3030f6f3b61e432d%3A0xaabbccdd22eeff!2sRS%20Bhayangkara%20Aceh!5e0!3m2!1sid!2sid!4v1638872833851!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 </main>

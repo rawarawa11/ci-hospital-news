@@ -100,7 +100,7 @@
             <div class="card h-100 text-center p-3 layanan-card" data-target="apotek">
                 <div class="card-body">
                     <i class="fas fa-pills fa-2x text-info mb-3"></i>
-                    <h5 class="card-title">Informasi Apotek</h5>
+                    <h5 class="card-title">Apotek</h5>
                     <p class="text-muted">Cek ketersediaan obat dan jam buka apotek.</p>
                 </div>
             </div>

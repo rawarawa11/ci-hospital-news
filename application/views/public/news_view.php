@@ -60,10 +60,10 @@
 					<a class="nav-link text-dark fw-semibold" href="<?= site_url('home/pelayanan'); ?>">Pelayanan</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-dark fw-semibold" href="<?= site_url('home'); ?>">Berita</a>
+					<a class="nav-link text-dark fw-semibold" href="<?= site_url('home/berita'); ?>">Berita</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-dark fw-semibold" href="<?= site_url('kontak'); ?>">Kontak</a>
+					<a class="nav-link text-dark fw-semibold" href="<?= site_url('home/kontak'); ?>">Kontak</a>
 				</li>
 			</ul>
 			<a href="<?= site_url('login'); ?>" class="btn btn-warning d-flex align-items-center px-4 py-2 rounded-3">
@@ -128,7 +128,7 @@
 						<div class="card-body">
 							<h5 class="card-title fw-bold text-dark"><i class="fas fa-user-md me-2 text-primary"></i>Jadwal Dokter</h5>
 							<p class="card-text text-muted">Informasi lengkap mengenai jadwal praktik dokter umum dan spesialis yang bertugas setiap hari.</p>
-							<a href="<?= site_url('pelayanan/jadwal_dokter'); ?>" class="btn btn-outline-primary">Lihat Jadwal</a>
+							<a href="<?= site_url('home/jadwal'); ?>" class="btn btn-outline-primary">Lihat Jadwal</a>
 						</div>
 					</div>
 				</div>
@@ -139,7 +139,7 @@
 						<div class="card-body">
 							<h5 class="card-title fw-bold text-dark"><i class="fas fa-ambulance me-2 text-danger"></i>Pelayanan IGD</h5>
 							<p class="card-text text-muted">Pelayanan Instalasi Gawat Darurat yang siaga 24 jam untuk penanganan medis darurat.</p>
-							<a href="<?= site_url('pelayanan/igd'); ?>" class="btn btn-outline-danger">Info IGD</a>
+							<a href="<?= site_url('home/igd'); ?>" class="btn btn-outline-danger">Info IGD</a>
 						</div>
 					</div>
 				</div>
@@ -148,9 +148,9 @@
 				<div class="col-md-4">
 					<div class="card h-100 shadow-sm border-0">
 						<div class="card-body">
-							<h5 class="card-title fw-bold text-dark"><i class="fas fa-pills me-2 text-success"></i>Informasi Apotek</h5>
+							<h5 class="card-title fw-bold text-dark"><i class="fas fa-pills me-2 text-success"></i>Apotek</h5>
 							<p class="card-text text-muted">Dapatkan informasi mengenai stok obat, jam operasional apotek, dan layanan farmasi lainnya di rumah sakit kami.</p>
-							<a href="<?= site_url('pelayanan/apotek'); ?>" class="btn btn-outline-success">Lihat Info</a>
+							<a href="<?= site_url('home/apotek'); ?>" class="btn btn-outline-success">Lihat Info</a>
 						</div>
 					</div>
 				</div>

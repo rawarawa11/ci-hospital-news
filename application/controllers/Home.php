@@ -7,6 +7,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_admin');
+        $this->load->helper('text');
     }
 
     public function index()
@@ -54,6 +55,39 @@ class Home extends CI_Controller
         $this->load->view('public/pelayanan_view', $data);
     }
     
+    public function jadwal()
+    {
+        $data['title'] = 'Jadwal Dokter';
+        $this->load->view('public/jadwal_dokter_view', $data);
+    }
+
+    public function igd()
+    {
+        $data['title'] = 'Layanan IGD';
+        $this->load->view('public/igd_view', $data);
+    }
+
+    public function apotek()
+    {
+        $data['title'] = 'Layanan Apotek';
+        $this->load->view('public/apotek_view', $data);
+    }
+
+    public function berita()
+    {
+        $data['title'] = 'Berita';
+        $this->load->model('M_admin');
+        $data['articles'] = $this->M_admin->get_all_posts();
+
+        $this->load->view('public/berita_view', $data);
+    }
+
+    public function kontak()
+    {
+        $data['title'] = 'Kontak';
+        $this->load->view('public/kontak_view', $data);
+    }
+
     // public function kategori($slug)
     // {
     //     $data['title'] = "Kategori";
