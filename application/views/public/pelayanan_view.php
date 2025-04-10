@@ -44,7 +44,7 @@
 <header class="bg-gradient shadow-sm py-3">
 	<div class="container d-flex justify-content-between align-items-center">
 		<div class="d-flex align-items-center">
-			<img src="assets/img/newspaper_9772011.png" alt="NewsOne logo" class="me-2"
+			<img src="assets/img/polda.png" alt="NewsOne logo" class="me-2"
 				 style="width: 40px; height: auto;"/>
 			<h4 class="mb-0 text-black-50">News<span class="fw-bold">BhayangkaraAceh</span></h4>
 		</div>
@@ -154,7 +154,7 @@
 		<div class="row">
 			<!-- Logo & Instansi -->
 			<div class="col-md-4 mb-4 mb-md-0 d-flex align-items-center">
-				<img src="<?= base_url('assets/img/logo_rs.png'); ?>" alt="Logo RS" style="width: 60px; height: auto;" class="me-3">
+				<img src="<?= base_url('assets/img/logo_rs.jpg'); ?>" alt="Logo RS" style="width: 60px; height: auto;" class="me-3">
 				<div>
 					<h5 class="fw-bold mb-1">RS Bhayangkara Aceh</h5>
 					<p class="small mb-0">Memberikan pelayanan kesehatan terbaik dan terpercaya untuk masyarakat Aceh dan sekitarnya.</p>
