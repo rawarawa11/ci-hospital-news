@@ -61,7 +61,7 @@
 	<div class="container d-flex justify-content-between align-items-center">
 		<div class="d-flex align-items-center">
             <img src="<?= base_url('assets/img/polda.png'); ?>" alt="News logo" class="me-2" style="width: 40px; height: auto;"/>
-			<h4 class="mb-0 text-black-50">News<span class="fw-bold">BhayangkaraAceh</span></h4>
+			<h4 class="mb-0 text-black-50">RS<span class="fw-bold">BhayangkaraAceh</span></h4>
 		</div>
 		<nav class="d-flex align-items-center">
 			<ul class="nav me-3">

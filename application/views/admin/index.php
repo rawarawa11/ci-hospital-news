@@ -30,7 +30,7 @@
 				<nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
 					<a class="navbar-brand w-100 mr-0" href="/" style="line-height: 25px;">
 						<div class="d-table m-auto">
-							<i class="material-icons">dashboard</i>
+							<img src="<?= base_url('assets/img/polda.png') ?>" alt="Logo RS Bhayangkara" style="height: 24px; vertical-align: middle;">
 							<span class="d-none d-md-inline ml-1">RS Bhayangkara</span>
 						</div>
 					</a>
@@ -81,10 +81,10 @@
 					</li>
 					<!-- Jadwal Dokter - Tambahan -->
 					<li class="nav-item">
-						<a class="nav-link <?= $this->uri->segment(1) === 'jadwal' && $this->uri->segment(2) === 'create' ? 'active' : '' ?>"
-						   href="<?= base_url('jadwal/tambah_jadwal') ?>">
-							<i class="material-icons">schedule</i>
-							<span>Tambah Jadwal Dokter</span>
+						<a class="nav-link <?= $this->uri->segment(1) === 'jadwal' ? 'active' : '' ?>"
+							href="<?= base_url('jadwal') ?>">
+							<i class="material-icons">event_note</i>
+							<span>Jadwal Dokter</span>
 						</a>
 					</li>
 					<li class="nav-item">

@@ -16,7 +16,7 @@
 			<div class="col-md-4 mb-4 mb-md-0">
 				<h6 class="fw-bold">Kontak Kami</h6>
 				<ul class="list-unstyled small">
-					<li><i class="fas fa-map-marker-alt me-2"></i> Jl. Teuku Umar No.45, Banda Aceh</li>
+					<li><i class="fas fa-map-marker-alt me-2"></i> Jl. Cut Nyak Dhien No.23, Lamtemen Bar., Banda Aceh</li>
 					<li><i class="fas fa-phone me-2"></i> (0651) 123456</li>
 					<li><i class="fas fa-envelope me-2"></i> info@rsbhayangkaraaceh.id</li>
 				</ul>

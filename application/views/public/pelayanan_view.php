@@ -1,48 +1,98 @@
 <?php $this->load->view('layout/header'); ?>
 
-<div class="container py-5">
-    <h2 class="text-center text-primary fw-bold mb-4">Layanan yang Tersedia</h2>
+<style>
+    .layanan-wrapper {
+        background: #f0f4f8;
+        padding: 60px 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-    <!-- Kartu Pilihan Layanan -->
-    <div class="row justify-content-center mb-4">
-        <div class="col-md-4 mb-3">
-            <a href="<?= base_url('home/jadwal'); ?>" class="text-decoration-none">
-                <div class="card h-100 text-center p-3 layanan-card">
-                    <div class="card-body">
-                        <i class="fas fa-user-md fa-2x text-success mb-3"></i>
-                        <h5 class="card-title">Jadwal Dokter</h5>
-                        <p class="text-muted">Lihat jadwal dokter umum dan spesialis kami.</p>
-                    </div>
-                </div>
-            </a>
+    .layanan-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .layanan-header h2 {
+        font-weight: 700;
+        color: #004085;
+    }
+
+    .layanan-header p {
+        color: #6c757d;
+    }
+
+    .layanan-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease-in-out;
+        text-align: center;
+        height: 100%;
+    }
+
+    .layanan-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .layanan-card i {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .layanan-card h5 {
+        font-weight: 600;
+        color: #343a40;
+    }
+
+    .layanan-card p {
+        color: #6c757d;
+    }
+
+    @media (max-width: 767px) {
+        .layanan-card {
+            margin-bottom: 30px;
+        }
+    }
+</style>
+
+<main class="layanan-wrapper">
+    <div class="container">
+        <div class="layanan-header">
+            <h2>Layanan yang Tersedia</h2>
+            <p>Kami menyediakan berbagai layanan kesehatan unggulan untuk Anda dan keluarga.</p>
         </div>
-        <div class="col-md-4 mb-3">
-            <a href="<?= base_url('home/igd'); ?>" class="text-decoration-none">
-                <div class="card h-100 text-center p-3 layanan-card">
-                    <div class="card-body">
-                        <i class="fas fa-ambulance fa-2x text-danger mb-3"></i>
-                        <h5 class="card-title">Pelayanan IGD</h5>
-                        <p class="text-muted">Informasi tentang layanan gawat darurat 24 jam.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <a href="<?= base_url('home/jadwal'); ?>" class="text-decoration-none text-dark">
+                    <div class="layanan-card">
+                        <i class="fas fa-user-md text-success"></i>
+                        <h5>Jadwal Dokter</h5>
+                        <p>Lihat jadwal dokter umum dan spesialis kami.</p>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 mb-3">
-            <a href="<?= base_url('home/apotek'); ?>" class="text-decoration-none">
-                <div class="card h-100 text-center p-3 layanan-card">
-                    <div class="card-body">
-                        <i class="fas fa-pills fa-2x text-info mb-3"></i>
-                        <h5 class="card-title">Apotek</h5>
-                        <p class="text-muted">Cek ketersediaan obat dan jam buka apotek.</p>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="<?= base_url('home/igd'); ?>" class="text-decoration-none text-dark">
+                    <div class="layanan-card">
+                        <i class="fas fa-ambulance text-danger"></i>
+                        <h5>Pelayanan IGD</h5>
+                        <p>Informasi tentang layanan gawat darurat 24 jam.</p>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="<?= base_url('home/apotek'); ?>" class="text-decoration-none text-dark">
+                    <div class="layanan-card">
+                        <i class="fas fa-pills text-info"></i>
+                        <h5>Apotek</h5>
+                        <p>Cek ketersediaan obat dan jam buka apotek.</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
-</div>
+</main>
 
 <?php $this->load->view('layout/footer'); ?>
-
-<!-- Bootstrap & FontAwesome -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
