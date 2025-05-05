@@ -125,4 +125,22 @@ class M_admin extends CI_Model
 			->result();
 	}
 
+	public function get_all_jadwal_dokter()
+	{
+		return $this->db
+			->select('*')
+			->from('jadwal_dokter')
+			->get()
+			->result();
+	}
+
+	public function insert_jadwal_dokter($data)
+	{
+		return $this->db->insert('jadwal_dokter', $data);
+	}
+
+	public function delete_jadwal_dokter($id)
+	{
+		return $this->db->where('id', $id)->delete('jadwal_dokter');
+	}
 }

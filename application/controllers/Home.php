@@ -45,7 +45,7 @@ class Home extends CI_Controller
 
     public function profil()
     {
-        $data['title'] = 'Profil RS Bhayangkara Aceh';
+        $data['title'] = 'Profil';
         $this->load->view('public/profil_view', $data);
     }
 
@@ -58,6 +58,7 @@ class Home extends CI_Controller
     public function jadwal()
     {
         $data['title'] = 'Jadwal Dokter';
+        $data['jadwal'] = $this->M_admin->get_all_jadwal_dokter();
         $this->load->view('public/jadwal_dokter_view', $data);
     }
 
@@ -75,9 +76,15 @@ class Home extends CI_Controller
 
     public function berita()
     {
-        $data['title'] = 'Berita';
-        $this->load->model('M_admin');
+        $data['title'] = "Berita";
         $data['articles'] = $this->M_admin->get_all_posts();
+
+        if (empty($data['articles'])) {
+            $data['articles'] = [];
+            $data['hero_news'] = null; 
+        } else {
+            $data['hero_news'] = $data['articles'][0];
+        }
 
         $this->load->view('public/berita_view', $data);
     }

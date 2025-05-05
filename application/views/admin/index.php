@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title><?= $title ?> - NewsOne</title>
+	<title><?= $title ?> - Admin</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -31,7 +31,7 @@
 					<a class="navbar-brand w-100 mr-0" href="/" style="line-height: 25px;">
 						<div class="d-table m-auto">
 							<i class="material-icons">dashboard</i>
-							<span class="d-none d-md-inline ml-1">NewsOne</span>
+							<span class="d-none d-md-inline ml-1">RS Bhayangkara</span>
 						</div>
 					</a>
 					<a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -46,8 +46,8 @@
 							<i class="fas fa-search"></i>
 						</div>
 					</div>
-					<input class="navbar-search form-control" type="text" placeholder="Search for something..."
-						   aria-label="Search"></div>
+					<input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search">
+				</div>
 			</form>
 			<div class="nav-wrapper">
 				<ul class="nav flex-column">
@@ -59,7 +59,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link <?= $this->uri->segment(2) === 'create' ? 'active' : '' ?>"
+						<a class="nav-link <?= $this->uri->segment(2) === 'create' && $this->uri->segment(1) === 'news' ? 'active' : '' ?>"
 						   href="<?= base_url('news/create') ?>">
 							<i class="material-icons">note_add</i>
 							<span>Add New Post</span>
@@ -79,24 +79,34 @@
 							<span>Categories</span>
 						</a>
 					</li>
+					<!-- Jadwal Dokter - Tambahan -->
+					<li class="nav-item">
+						<a class="nav-link <?= $this->uri->segment(1) === 'jadwal' && $this->uri->segment(2) === 'create' ? 'active' : '' ?>"
+						   href="<?= base_url('jadwal/tambah_jadwal') ?>">
+							<i class="material-icons">schedule</i>
+							<span>Tambah Jadwal Dokter</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link <?= $this->uri->segment(1) === 'jadwal_dokter' && $this->uri->segment(2) === NULL ? 'active' : '' ?>"
+						   href="<?= base_url('jadwal_dokter') ?>">
+							<i class="material-icons">event_note</i>
+							<span>Semua Jadwal Dokter</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</aside>
 		<!-- End Main Sidebar -->
 		<main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
 			<div class="main-navbar sticky-top bg-white">
-				<!-- Main Navbar -->
 				<nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
-					<div class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
-					</div>
+					<div class="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></div>
 					<ul class="navbar-nav border-left flex-row ">
 						<li class="nav-item dropdown align-items-stretch">
-							<a class="nav-link dropdown-toggle text-nowrap px-2" data-toggle="dropdown" href="#"
-							   role="button" aria-haspopup="true" aria-expanded="false">
-								<img class="user-avatar rounded-circle mr-2"
-									 src="<?= base_url('assets/img/user.png') ?>" alt="User Avatar">
-								<span
-									class="d-none d-md-inline-block"><?= $this->session->userdata('full_name') ?></span>
+							<a class="nav-link dropdown-toggle text-nowrap px-2" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<img class="user-avatar rounded-circle mr-2" src="<?= base_url('assets/img/user.png') ?>" alt="User Avatar">
+								<span class="d-none d-md-inline-block"><?= $this->session->userdata('full_name') ?></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-small px-0">
 								<a class="dropdown-item text-danger" href="<?= base_url('logout') ?>">
@@ -114,15 +124,14 @@
 					</nav>
 				</nav>
 			</div>
-			<!-- / .main-navbar -->
 			<div class="main-content-container container-fluid px-4">
 				<?php $this->load->view($module); ?>
 			</div>
 			<footer class="main-footer d-flex p-2 px-3 bg-white border-top">
-            <span class="copyright ml-auto my-auto mr-2">Copyright &copy; <?= date('Y') ?>
-              <a href="https://github.com/Muammarzaki/article-portal-ci" rel="nofollow">U122</a>.
-              <span>Template by Diki Siswanto</span>
-            </span>
+				<span class="copyright ml-auto my-auto mr-2">Copyright &copy; <?= date('Y') ?>
+					<a href="https://github.com/rawarawa11/ci-hospital-news" rel="nofollow">U122</a>.
+					<span>RawasianaSaira</span>
+				</span>
 			</footer>
 		</main>
 	</div>

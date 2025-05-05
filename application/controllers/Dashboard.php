@@ -15,7 +15,7 @@ class Dashboard extends Admin_Controller
 
 	public function index()
 	{
-		$this->var['title'] = 'News Dashboard';
+		$this->var['title'] = 'RS Bhayangkara';
 		$this->var['module'] = 'admin/home';
 		$this->var['post_numrows'] = $this->admin->get_post_numrows();
 		$this->var['category_numrows'] = $this->admin->get_category_numrows();
