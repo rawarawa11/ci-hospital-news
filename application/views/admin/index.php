@@ -30,8 +30,8 @@
 				<nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
 					<a class="navbar-brand w-100 mr-0" href="/" style="line-height: 25px;">
 						<div class="d-table m-auto">
-							<img src="<?= base_url('assets/img/polda.png') ?>" alt="Logo RS Bhayangkara" style="height: 24px; vertical-align: middle;">
-							<span class="d-none d-md-inline ml-1">RS Bhayangkara</span>
+							<img src="<?= base_url('assets/img/biddokes.png') ?>" alt="Logo RS Bhayangkara" style="height: 24px; vertical-align: middle;">
+							<span class="d-none d-md-inline ml-1">RSBhayangkara Aceh</span>
 						</div>
 					</a>
 					<a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -88,10 +88,10 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link <?= $this->uri->segment(1) === 'jadwal_dokter' && $this->uri->segment(2) === NULL ? 'active' : '' ?>"
-						   href="<?= base_url('jadwal_dokter') ?>">
-							<i class="material-icons">event_note</i>
-							<span>Semua Jadwal Dokter</span>
+						<a class="nav-link <?= $this->uri->segment(1) === 'kontak' && $this->uri->segment(2) === NULL ? 'active' : '' ?>"
+							href="<?= base_url('kontak') ?>">
+							<i class="material-icons">contact_phone</i>
+							<span>Kontak</span>
 						</a>
 					</li>
 				</ul>

@@ -19,7 +19,6 @@
 			transform: translateY(-10px);
 			box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 		}
-
 		.bg-gradient {
 			background: linear-gradient(to right, #ff7e5f, #feb47b);
 		}
@@ -44,7 +43,7 @@
         }
 
         .wrapper {
-            min-height: 100vh; /* agar wrapper menutupi seluruh tinggi viewport */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }

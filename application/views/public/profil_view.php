@@ -2,7 +2,7 @@
 
 <style>
     .profil-wrapper {
-        background-color: #f0f4f8;
+        background: #f8fcff;
         padding: 60px 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -14,21 +14,25 @@
 
     .profil-header h2 {
         font-weight: 700;
-        color: #004085;
+        color: #007b8a;
     }
 
     .profil-header p {
         color: #6c757d;
+        font-size: 18px;
     }
 
     .profil-section h4 {
         font-weight: 700;
-        color: #004085;
+        color: #007b8a;
+        border-left: 4px solid #2db3b5;
+        padding-left: 12px;
+        margin-bottom: 16px;
     }
 
     .profil-section p,
     .profil-section li {
-        color: #5a5a5a;
+        color: #444;
         font-size: 16px;
     }
 
@@ -37,26 +41,29 @@
     }
 
     .list-group-item {
-        background: none;
-        border: none;
-        padding-left: 0;
-        position: relative;
-        padding-left: 24px;
+        background: #e7f9f9;
+        border: 1px solid #cfeeee;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        padding: 12px 18px;
+        color: #00696e;
     }
 
     .list-group-item::before {
-        content: "✔";
-        color: #28a745;
-        position: absolute;
-        left: 0;
-        font-weight: bold;
+        content: "🩺";
+        margin-right: 10px;
     }
 
     .profil-img {
         border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 20px rgba(0, 123, 138, 0.1);
         width: 100%;
-        max-width: 500px;
+        max-width: 100%;
+        transition: 0.3s ease-in-out;
+    }
+
+    .profil-img:hover {
+        transform: scale(1.02);
     }
 
     @media (max-width: 768px) {
@@ -64,44 +71,36 @@
             font-size: 28px;
         }
     }
-
-    .profil-section .row {
-        display: flex;
-        align-items: center;
-    }
-
-    .profil-section .col-md-6 {
-        order: 1;
-    }
 </style>
 
 <main class="profil-wrapper">
     <div class="container">
+        <!-- Header -->
         <div class="profil-header">
-            <h2>Profil RS Bhayangkara Aceh</h2>
-            <p>Informasi lengkap mengenai sejarah, visi, misi, dan layanan unggulan rumah sakit kami.</p>
+            <h2><i class="fas fa-clinic-medical me-2"></i>Profil RS Bhayangkara Aceh</h2>
+            <p>Informasi lengkap mengenai identitas, visi misi, dan layanan unggulan rumah sakit kami.</p>
         </div>
 
         <!-- Sejarah, Visi, Misi -->
         <div class="row align-items-center profil-section mb-5">
-            <div class="col-md-6 mb-4 order-md-1">
+            <div class="col-md-6 mb-4">
                 <img src="<?= base_url('assets/img/instansi 2.jpg'); ?>" alt="RS Bhayangkara" class="img-fluid profil-img">
             </div>
             <div class="col-md-6">
-                <h4 class="mb-3">Sejarah Singkat</h4>
+                <h4>Sejarah Singkat</h4>
                 <p style="text-align: justify;">
-                    RS Bhayangkara Aceh didirikan untuk mendukung pelayanan kesehatan kepada anggota Polri dan masyarakat umum. Seiring waktu, rumah sakit ini berkembang menjadi pusat layanan medis yang profesional dan terpercaya di wilayah Aceh.
+                    RS Bhayangkara Aceh hadir sebagai bagian dari kepedulian Polri dalam memberikan pelayanan kesehatan yang amanah, profesional, dan merata bagi anggota serta masyarakat umum. Seiring waktu, rumah sakit ini berkembang menjadi pusat rujukan kesehatan di Aceh.
                 </p>
 
-                <h4 class="mt-4 mb-2">Visi</h4>
-                <p class="fst-italic">"Menjadi Rumah Sakit Pilihan Utama yang Profesional dan Humanis."</p>
+                <h4 class="mt-4">Visi</h4>
+                <p class="fst-italic">"Menjadi Rumah Sakit Pilihan Utama yang Profesional, Humanis, dan Terpercaya."</p>
 
-                <h4 class="mt-4 mb-2">Misi</h4>
-                <ul>
-                    <li>Menyediakan pelayanan kesehatan yang berkualitas tinggi.</li>
-                    <li>Menjunjung tinggi etika profesi dan nilai kemanusiaan.</li>
-                    <li>Meningkatkan kompetensi SDM secara berkelanjutan.</li>
-                    <li>Menjalin kerja sama dengan berbagai pihak untuk pengembangan layanan.</li>
+                <h4 class="mt-4">Misi</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Memberikan layanan kesehatan berkualitas dan terstandar.</li>
+                    <li class="list-group-item">Menjaga integritas dan etika dalam setiap tindakan medis.</li>
+                    <li class="list-group-item">Meningkatkan kompetensi tenaga medis dan nonmedis.</li>
+                    <li class="list-group-item">Bersinergi dengan instansi kesehatan dan masyarakat luas.</li>
                 </ul>
             </div>
         </div>
@@ -109,13 +108,13 @@
         <!-- Fasilitas Unggulan -->
         <div class="row profil-section">
             <div class="col">
-                <h4 class="mb-4">Fasilitas Unggulan</h4>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Instalasi Gawat Darurat 24 Jam</li>
-                    <li class="list-group-item">Ruang Rawat Inap Nyaman dan Modern</li>
-                    <li class="list-group-item">Laboratorium & Radiologi Lengkap</li>
-                    <li class="list-group-item">Klinik Spesialis & Subspesialis</li>
-                    <li class="list-group-item">Farmasi dan Apotek dengan Stok Terjamin</li>
+                <h4>Fasilitas Unggulan</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">IGD 24 Jam dengan tenaga medis profesional</li>
+                    <li class="list-group-item">Ruang rawat inap modern & nyaman</li>
+                    <li class="list-group-item">Layanan radiologi, USG & laboratorium lengkap</li>
+                    <li class="list-group-item">Klinik spesialis seperti jantung, paru, anak, dan lainnya</li>
+                    <li class="list-group-item">Farmasi dengan pelayanan cepat dan aman</li>
                 </ul>
             </div>
         </div>
